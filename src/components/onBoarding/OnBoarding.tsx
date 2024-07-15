@@ -42,7 +42,7 @@ const Onboarding = () => {
       alert('시간을 정해주세요');
       return;
     }
-    navigate(`onboarding`, {
+    navigate(`/room/1`, {
       state: {
         user: [
           { name: navigator, role: 'navigator' },

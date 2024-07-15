@@ -6,6 +6,7 @@ import OnBoardingPage from './pages/OnboardingPage';
 import { ThemeProvider } from 'styled-components';
 import { theme } from './styles/theme';
 import GlobalStyles from './styles/Global.style';
+import PairRoomPage from './pages/PairRoom/PairRoomPage';
 
 const App = () => {
   const router = createBrowserRouter([
@@ -14,8 +15,12 @@ const App = () => {
       element: <Main />,
     },
     {
-      path: '/room/:roomId',
+      path: '/room/:roomId/onboarding',
       element: <OnBoardingPage />,
+    },
+    {
+      path: '/room/:roomId',
+      element: <PairRoomPage />,
     },
   ]);
 
