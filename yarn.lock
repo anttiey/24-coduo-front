@@ -56,6 +56,14 @@
   resolved "https://registry.yarnpkg.com/@eslint/js/-/js-8.57.0.tgz#a5417ae8427873f1dd08b70b3574b453e67b5f7f"
   integrity sha512-Ys+3g2TaW7gADOJzPt83SJtCDhMjndcDMFVQ/Tj9iA1BfJzFKD9mAUXT3OenpuPHbI6P/myECxRJrofUsDx/5g==
 
+"@hanuuny/react-modal@^0.0.10":
+  version "0.0.10"
+  resolved "https://registry.yarnpkg.com/@hanuuny/react-modal/-/react-modal-0.0.10.tgz#b801062d7c5519b330063e9f6019e8fcda9ae9f5"
+  integrity sha512-kNViZuFYi4Ff0bXG1kqhsnyFGyQGkVcjc2Zf6RXINKgJ9ZZIJ08fK1kauCsnP2WewCdbqz7N8dqYXi6hhMAn2g==
+  dependencies:
+    react "^18.2.0"
+    react-dom "^18.2.0"
+
 "@humanwhocodes/config-array@^0.11.14":
   version "0.11.14"
   resolved "https://registry.yarnpkg.com/@humanwhocodes/config-array/-/config-array-0.11.14.tgz#d78e481a039f7566ecc9660b4ea7fe6b1fec442b"
@@ -3471,7 +3479,7 @@ raw-body@2.5.2:
     iconv-lite "0.4.24"
     unpipe "1.0.0"
 
-react-dom@^18.3.1:
+react-dom@^18.2.0, react-dom@^18.3.1:
   version "18.3.1"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-18.3.1.tgz#c2265d79511b57d479b3dd3fdfa51536494c5cb4"
   integrity sha512-5m4nQKp+rZRb09LNH59GM4BxTh9251/ylbKIbpe7TpGxfJ+9kv6BLkLBXIjjspbgbnIBNqlI23tRnTWT0snUIw==
@@ -3499,7 +3507,7 @@ react-router@6.24.1:
   dependencies:
     "@remix-run/router" "1.17.1"
 
-react@^18.3.1:
+react@^18.2.0, react@^18.3.1:
   version "18.3.1"
   resolved "https://registry.yarnpkg.com/react/-/react-18.3.1.tgz#49ab892009c53933625bd16b2533fc754cab2891"
   integrity sha512-wS+hAgJShR0KhEvPJArfuPVN1+Hz1t0Y6n5jLrGQbkb4urgPE/0Rve+1kMB1v/oWgHgm4WIcV+i7F2pTVj+2iQ==
