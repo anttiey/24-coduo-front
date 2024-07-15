@@ -34,6 +34,7 @@ const Onboarding = () => {
   };
 
   const handleComplete = () => {
+    console.log(time);
     if (navigator === '' || driver === '') {
       alert('역할을 정해주세요');
       return;
@@ -100,7 +101,7 @@ const SettingBox = styled.div`
 `;
 
 const CompleteButton = styled.button`
-  width: 30rem;
+  width: 35rem;
   height: 5rem;
 
   background-color: #b9b9b9;

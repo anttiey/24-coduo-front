@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Onboarding from '../components/onBoarding/OnBoarding';
+import Onboarding from '../components/OnBoarding/OnBoarding';
 import Header from '../components/Header/Header';
 
 const OnBoardingPage = () => {

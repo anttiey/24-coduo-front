@@ -11,7 +11,7 @@ interface TimerButtonProp {
 }
 
 const TimerButton = ({ auto, handleTime, time, currentTime, handleSelect, isSelect }: TimerButtonProp) => {
-  const [customTime, setCustomTime] = useState<string>();
+  const [customTime, setCustomTime] = useState<number>();
 
   const handleClick = () => {
     if (auto) {
@@ -35,7 +35,7 @@ const TimerButton = ({ auto, handleTime, time, currentTime, handleSelect, isSele
               placeholder="시간을 입력해주세요(분)"
               value={customTime}
               onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-                setCustomTime(event.target.value);
+                setCustomTime(Number(event.target.value));
               }}
               type="number"
             />
@@ -57,7 +57,7 @@ const TimerButton = ({ auto, handleTime, time, currentTime, handleSelect, isSele
 
 const CustomTimeInput = styled.input`
   width: 35rem;
-  height: 5rem;
+  border-radius: 1rem;
   border: 1px solid #0094a0;
   padding: 0 1rem;
 `;
@@ -68,7 +68,7 @@ const Timer = styled.div`
 `;
 
 const TimerButtonStyle = styled.button<{ active: boolean }>`
-  width: 7.5rem;
+  width: 9.5rem;
   height: 4rem;
 
   display: flex;
