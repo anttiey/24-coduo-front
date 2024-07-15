@@ -36,6 +36,7 @@ const TimerButton = ({ auto, handleTime, time, currentTime, handleSelect, isSele
               value={customTime}
               onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
                 setCustomTime(Number(event.target.value));
+                handleTime(Number(event.target.value));
               }}
               type="number"
             />
