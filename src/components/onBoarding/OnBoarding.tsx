@@ -64,6 +64,7 @@ const Onboarding = () => {
       </SettingBox>
 
       <CompleteButton
+        active={navigator !== '' && driver !== '' && time !== 0}
         onClick={() => {
           handleComplete();
         }}
@@ -75,42 +76,43 @@ const Onboarding = () => {
 };
 
 const OnboardingContainer = styled.div`
-  width: 40rem;
-  height: 41.9375rem;
+  width: 70rem;
+  height: 60rem;
+
   display: flex;
+  font-size: 2rem;
 
   flex-direction: column;
   background-color: white;
 
   align-items: center;
+  justify-content: center;
   border-radius: 1rem;
-  padding: 3rem 2.5rem;
+  padding: 0rem 4rem;
 
-  gap: 5rem;
+  gap: 6rem;
 `;
 
 const SettingBox = styled.div`
-  width: 100%;
+  width: 90%;
   display: flex;
   flex-direction: column;
   gap: 1rem;
 `;
 
-const CompleteButton = styled.button`
-  position: relative;
-  bottom: -6rem;
+const CompleteButton = styled.button<{ active: boolean }>`
+  width: 35rem;
+  height: 5rem;
 
-  width: 25rem;
-  height: 3rem;
+  background-color: ${(props) => (props.active ? '#24d4c3' : '#b9b9b9')};
 
-  background-color: #b9b9b9;
   color: white;
 
   display: flex;
   justify-content: center;
   align-items: center;
 
-  border-radius: 5rem;
+  border-radius: 6rem;
 
   &:hover {
     background-color: #24d4c3;
@@ -118,7 +120,7 @@ const CompleteButton = styled.button`
 `;
 
 const Title = styled.p`
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   color: #00506b;
 `;
 

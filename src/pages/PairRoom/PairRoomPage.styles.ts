@@ -14,7 +14,8 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 100vh - 8rem;
+  padding: 4rem;
 `;
 
 export const TimerContainer = styled.div`
@@ -23,14 +24,15 @@ export const TimerContainer = styled.div`
   justify-content: center;
   position: relative;
   margin-bottom: 3rem;
+  margin-top: 3rem;
 `;
 
 export const Timer = styled.div<{ progress: number; isTimeUp?: boolean }>`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 28rem;
-  height: 28rem;
+  width: 48rem;
+  height: 48rem;
   border-radius: 50%;
   background: conic-gradient(#00e0c8 ${({ progress }) => progress}%, #ddd ${({ progress }) => progress}%);
   position: relative;
@@ -39,8 +41,8 @@ export const Timer = styled.div<{ progress: number; isTimeUp?: boolean }>`
   &::before {
     content: '';
     position: absolute;
-    width: 24rem;
-    height: 24rem;
+    width: 44rem;
+    height: 44rem;
     background: #fff;
     border-radius: 50%;
     z-index: -1;
@@ -49,9 +51,14 @@ export const Timer = styled.div<{ progress: number; isTimeUp?: boolean }>`
 
 export const TimerText = styled.p<{ isTimeUp?: boolean }>`
   display: flex;
-  font-size: 4rem;
+  font-size: 6rem;
   font-weight: bold;
   color: #000;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   ${({ isTimeUp }) =>
     isTimeUp &&
     css`
@@ -60,7 +67,7 @@ export const TimerText = styled.p<{ isTimeUp?: boolean }>`
 `;
 
 export const TimerTextDetail = styled.p`
-  width: 7rem;
+  width: 10rem;
   text-align: center;
 `;
 
@@ -75,14 +82,14 @@ export const Button = styled.button<{ isTimeUp?: boolean }>`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 3rem;
-  height: 3rem;
+  width: 8rem;
+  height: 8rem;
   margin: 0.5rem;
   border: none;
   border-radius: 50%;
   background-color: #ffc453;
   cursor: pointer;
-  font-size: 1.5rem;
+  font-size: 4rem;
   transition: background-color 0.3s;
 
   &:hover {
@@ -116,12 +123,12 @@ export const RoleTextContainer = styled.div`
 `;
 
 export const RoleText = styled.p`
-  font-size: 2rem;
-  font-weight: 700;
+  font-size: 4rem;
+  font-weight: 600;
   color: #333333;
   margin: 5px 0;
   text-align: center;
-  line-height: 5rem;
+  line-height: 8rem;
   span {
     color: #006c81;
   }

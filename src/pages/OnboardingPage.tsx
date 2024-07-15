@@ -1,17 +1,21 @@
 import styled from 'styled-components';
-import Onboarding from '../components/onBoarding/OnBoarding';
+import Onboarding from '../components/OnBoarding/OnBoarding';
+import Header from '../components/Header/Header';
 
 const OnBoardingPage = () => {
   return (
-    <Container>
-      <Onboarding />
-    </Container>
+    <>
+      <Header />
+      <Container>
+        <Onboarding />
+      </Container>
+    </>
   );
 };
 
 const Container = styled.div`
   width: 100vw;
-  height: 100vh;
+  height: calc(100vh - 8rem);
   display: flex;
   justify-content: center;
   align-items: center;

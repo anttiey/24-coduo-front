@@ -11,7 +11,7 @@ interface TimerButtonProp {
 }
 
 const TimerButton = ({ auto, handleTime, time, currentTime, handleSelect, isSelect }: TimerButtonProp) => {
-  const [customTime, setCustomTime] = useState<string>();
+  const [customTime, setCustomTime] = useState<number>();
 
   const handleClick = () => {
     if (auto) {
@@ -35,7 +35,8 @@ const TimerButton = ({ auto, handleTime, time, currentTime, handleSelect, isSele
               placeholder="시간을 입력해주세요(분)"
               value={customTime}
               onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-                setCustomTime(event.target.value);
+                setCustomTime(Number(event.target.value));
+                handleTime(Number(event.target.value));
               }}
               type="number"
             />
@@ -56,19 +57,20 @@ const TimerButton = ({ auto, handleTime, time, currentTime, handleSelect, isSele
 };
 
 const CustomTimeInput = styled.input`
-  width: 13rem;
+  width: 35rem;
+  border-radius: 1rem;
   border: 1px solid #0094a0;
   padding: 0 1rem;
 `;
 
 const Timer = styled.div`
   display: flex;
-  gap: 1rem;
+  gap: 3rem;
 `;
 
 const TimerButtonStyle = styled.button<{ active: boolean }>`
-  width: 4.5rem;
-  height: 2rem;
+  width: 9.5rem;
+  height: 4rem;
 
   display: flex;
   justify-content: center;
@@ -78,7 +80,7 @@ const TimerButtonStyle = styled.button<{ active: boolean }>`
   color: ${(props) => (props.active ? 'white' : '#0094a0')};
 
   border: 1px solid #0094a0;
-  border-radius: 10px;
+  border-radius: 20px;
   &:hover {
     background-color: #0094a0;
     color: white;
