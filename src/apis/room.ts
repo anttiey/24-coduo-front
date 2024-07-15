@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:8080';
+const API_URL = '';
 
 export const addPairRoom = async (nameA: string, nameB: string) => {
   const response = await fetch(`${API_URL}/pair-room`, {
@@ -15,5 +15,5 @@ export const addPairRoom = async (nameA: string, nameB: string) => {
 
   const data = await response.json();
 
-  return data;
+  return data.accessCode;
 };

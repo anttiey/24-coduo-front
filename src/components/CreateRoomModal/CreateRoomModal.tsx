@@ -9,8 +9,6 @@ interface CreateRoomModalProps {
   closeModal: () => void;
 }
 
-const roomId = 1;
-
 const CreateRoomModal = ({ isModalOpen, closeModal }: CreateRoomModalProps) => {
   const navigate = useNavigate();
 
@@ -31,8 +29,8 @@ const CreateRoomModal = ({ isModalOpen, closeModal }: CreateRoomModalProps) => {
     event.preventDefault();
 
     try {
-      await addPairRoom(pair.first, pair.second);
-      navigate(`/room/${roomId}/onboarding`);
+      const accessCode = await addPairRoom(pair.first, pair.second);
+      navigate(`/room/${accessCode}/onboarding`);
     } catch (error) {
       if (error instanceof Error) {
         alert(error.message);
