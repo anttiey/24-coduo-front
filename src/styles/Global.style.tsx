@@ -20,6 +20,7 @@ const GlobalStyles = createGlobalStyle`
 
     /* Fix mobile Safari increase font-size on landscape mode */
     html {
+        font-size: 62.5%;
         -moz-text-size-adjust: none;
         -webkit-text-size-adjust: none;
         text-size-adjust: none;

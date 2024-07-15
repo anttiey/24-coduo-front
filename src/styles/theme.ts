@@ -4,15 +4,16 @@ const color = {
   primary: {
     light: '#F1FBFA',
     main: '#00E0C8',
+    dark: '#00758B',
   },
   secondary: '#FFC453',
 };
 
 const fontSize = {
-  sm: '12px',
-  base: '14px',
-  md: '16px',
-  lg: '24px',
+  sm: '1.2rem',
+  base: '1.4rem',
+  md: '1.6rem',
+  lg: '2.4rem',
 };
 
 const fontWeight = {
