@@ -34,7 +34,6 @@ const Onboarding = () => {
   };
 
   const handleComplete = () => {
-    console.log(time);
     if (navigator === '' || driver === '') {
       alert('역할을 정해주세요');
       return;
@@ -65,6 +64,7 @@ const Onboarding = () => {
       </SettingBox>
 
       <CompleteButton
+        active={navigator !== '' && driver !== '' && time !== 0}
         onClick={() => {
           handleComplete();
         }}
@@ -100,11 +100,12 @@ const SettingBox = styled.div`
   gap: 1rem;
 `;
 
-const CompleteButton = styled.button`
+const CompleteButton = styled.button<{ active: boolean }>`
   width: 35rem;
   height: 5rem;
 
-  background-color: #b9b9b9;
+  background-color: ${(props) => (props.active ? '#24d4c3' : '#b9b9b9')};
+
   color: white;
 
   display: flex;
