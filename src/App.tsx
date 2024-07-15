@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import Main from './pages/Main/Main';
+import OnBoardingPage from './pages/OnboardingPage';
 
 import { ThemeProvider } from 'styled-components';
 import { theme } from './styles/theme';
@@ -11,6 +12,10 @@ const App = () => {
     {
       path: '/',
       element: <Main />,
+    },
+    {
+      path: '/room/:roomId',
+      element: <OnBoardingPage />,
     },
   ]);
 
