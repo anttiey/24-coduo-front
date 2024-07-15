@@ -1,6 +1,7 @@
-import { styled } from 'styled-components';
-import TimerButton from './TimerButton';
 import { useState } from 'react';
+
+import TimerButton from '../TimerButton/TimerButton';
+import * as S from './SelectTime.styles';
 
 interface SelectTime {
   handleTime: (time: number) => void;
@@ -13,8 +14,8 @@ const SelectTime = ({ handleTime, currentTime }: SelectTime) => {
     setIsSelect(select);
   };
   return (
-    <TimerButtonContainer>
-      <TimerBox>
+    <S.TimerButtonContainer>
+      <S.TimerBox>
         <TimerButton
           handleTime={handleTime}
           time={5}
@@ -36,7 +37,7 @@ const SelectTime = ({ handleTime, currentTime }: SelectTime) => {
           handleSelect={handleSelect}
           isSelect={isSelect}
         />
-      </TimerBox>
+      </S.TimerBox>
       <TimerButton
         handleTime={handleTime}
         currentTime={currentTime}
@@ -44,19 +45,8 @@ const SelectTime = ({ handleTime, currentTime }: SelectTime) => {
         handleSelect={handleSelect}
         isSelect={isSelect}
       />
-    </TimerButtonContainer>
+    </S.TimerButtonContainer>
   );
 };
-
-const TimerButtonContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-`;
-
-const TimerBox = styled.div`
-  display: flex;
-  gap: 2rem;
-`;
 
 export default SelectTime;

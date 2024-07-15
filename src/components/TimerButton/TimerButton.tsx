@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { styled } from 'styled-components';
+
+import * as S from './TimerButton.styles';
 
 interface TimerButtonProp {
   handleTime: (time: number) => void;
@@ -26,12 +27,12 @@ const TimerButton = ({ auto, handleTime, time, currentTime, handleSelect, isSele
   return (
     <>
       {auto ? (
-        <Timer>
-          <TimerButtonStyle active={isSelect} onClick={() => handleClick()}>
+        <S.Timer>
+          <S.TimerButtonStyle active={isSelect} onClick={() => handleClick()}>
             직접설정
-          </TimerButtonStyle>
+          </S.TimerButtonStyle>
           {isSelect && (
-            <CustomTimeInput
+            <S.CustomTimeInput
               placeholder="시간을 입력해주세요(분)"
               value={customTime}
               onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
@@ -41,50 +42,19 @@ const TimerButton = ({ auto, handleTime, time, currentTime, handleSelect, isSele
               type="number"
             />
           )}
-        </Timer>
+        </S.Timer>
       ) : (
-        <TimerButtonStyle
+        <S.TimerButtonStyle
           active={currentTime === time && !isSelect}
           onClick={() => {
             handleClick();
           }}
         >
           {time} 분
-        </TimerButtonStyle>
+        </S.TimerButtonStyle>
       )}
     </>
   );
 };
-
-const CustomTimeInput = styled.input`
-  width: 35rem;
-  border-radius: 1rem;
-  border: 1px solid #0094a0;
-  padding: 0 1rem;
-`;
-
-const Timer = styled.div`
-  display: flex;
-  gap: 3rem;
-`;
-
-const TimerButtonStyle = styled.button<{ active: boolean }>`
-  width: 9.5rem;
-  height: 4rem;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  background-color: ${(props) => (props.active ? '#0094a0' : 'white')};
-  color: ${(props) => (props.active ? 'white' : '#0094a0')};
-
-  border: 1px solid #0094a0;
-  border-radius: 20px;
-  &:hover {
-    background-color: #0094a0;
-    color: white;
-  }
-`;
 
 export default TimerButton;
