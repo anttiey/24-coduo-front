@@ -51,12 +51,12 @@ const SelectTime = ({ handleTime, currentTime }: SelectTime) => {
 const TimerButtonContainer = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 2rem;
 `;
 
 const TimerBox = styled.div`
   display: flex;
-  gap: 1rem;
+  gap: 2rem;
 `;
 
 export default SelectTime;
