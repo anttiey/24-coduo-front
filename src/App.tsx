@@ -1,10 +1,10 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-import Main from './pages/Main';
+import Main from './pages/Main/Main';
 
 import { ThemeProvider } from 'styled-components';
+import { theme } from './styles/theme';
 import GlobalStyles from './styles/Global.style';
-import theme from './styles/theme';
 
 const App = () => {
   const router = createBrowserRouter([

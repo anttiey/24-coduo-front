@@ -1,3 +1,5 @@
+import { DefaultTheme } from 'styled-components';
+
 const color = {
   primary: {
     light: '#F1FBFA',
@@ -20,13 +22,12 @@ const fontWeight = {
   bold: '700',
 };
 
-const boxHeight = '64px';
+export type ColorTypes = typeof color;
+export type FontSizeTypes = typeof fontSize;
+export type FontWeightTypes = typeof fontWeight;
 
-const theme = {
+export const theme: DefaultTheme = {
   color,
   fontSize,
   fontWeight,
-  boxHeight,
 };
-
-export default theme;
