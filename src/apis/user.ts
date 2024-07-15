@@ -1,14 +1,17 @@
-export const getUserName = async (roomId: string) => {
-  try {
-    const response = await fetch(`room/${roomId}/onboarding`, {
-      method: 'GET',
-    });
+const API_URL = '';
 
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    if (error instanceof Error) {
-      throw new Error();
-    }
-  }
+export interface UserInfo {
+  id: number;
+  nameA: string;
+  nameB: string;
+}
+
+export const getUserName = async (): Promise<UserInfo> => {
+  const response = await fetch(`${API_URL}/pair-room`, {
+    method: 'GET',
+  });
+
+  const data: UserInfo = await response.json();
+
+  return data;
 };

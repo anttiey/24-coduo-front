@@ -21,10 +21,10 @@ export const SettingBox = styled.div`
   gap: 1rem;
 `;
 
-export const CompleteButton = styled.button<{ active: boolean }>`
+export const CompleteButton = styled.button<{ $isActive: boolean }>`
   width: 35rem;
   height: 5rem;
-  background-color: ${(props) => (props.active ? '#24D4C3' : '#B9B9B9')};
+  background-color: ${(props) => (props.$isActive ? '#24D4C3' : '#B9B9B9')};
   color: white;
   display: flex;
   justify-content: center;

@@ -12,7 +12,7 @@ export const Timer = styled.div`
   gap: 3rem;
 `;
 
-export const TimerButtonStyle = styled.button<{ active: boolean }>`
+export const TimerButtonStyle = styled.button<{ $isActive: boolean }>`
   width: 9.5rem;
   height: 4rem;
 
@@ -20,8 +20,8 @@ export const TimerButtonStyle = styled.button<{ active: boolean }>`
   justify-content: center;
   align-items: center;
 
-  background-color: ${(props) => (props.active ? '#0094a0' : 'white')};
-  color: ${(props) => (props.active ? 'white' : '#0094a0')};
+  background-color: ${(props) => (props.$isActive ? '#0094a0' : 'white')};
+  color: ${(props) => (props.$isActive ? 'white' : '#0094a0')};
 
   border: 1px solid #0094a0;
   border-radius: 20px;

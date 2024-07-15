@@ -1,13 +1,15 @@
 import { useEffect, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import SelectRole from '../SelectRole/SelectRole';
 import SelectTime from '../SelectTime/SelectTime';
 import { getUserName } from '../../apis/user';
 import * as S from './OnBoarding.styles';
 
+type Role = 'driver' | 'navigator';
+
 const Onboarding = () => {
   const navigate = useNavigate();
-  const { roomId } = useParams() as { roomId: string };
+  // const { roomId } = useParams() as { roomId: string };
 
   const [userName, setUserInfo] = useState<{ id: number; nameA: string; nameB: string } | null>(null);
   const [navigator, setNavigator] = useState<string>('');
@@ -17,7 +19,7 @@ const Onboarding = () => {
   useEffect(() => {
     const fetchUserInfo = async () => {
       try {
-        const data = await getUserName(roomId);
+        const data = await getUserName();
         setUserInfo(data);
       } catch (error) {
         if (error instanceof Error) {
@@ -28,10 +30,7 @@ const Onboarding = () => {
     fetchUserInfo();
   }, []);
 
-  // const [name, setName] = useState(userName);
-  // const roomId = 10;
-
-  const handleSelect = (role: 'driver' | 'navigator', event: React.ChangeEvent<HTMLSelectElement>) => {
+  const handleSelect = (role: Role, event: React.ChangeEvent<HTMLSelectElement>) => {
     const selectName = event.target.value;
     if (!userName) return;
     if (role === 'driver') {
@@ -69,11 +68,12 @@ const Onboarding = () => {
     });
   };
 
+  const isEmpty = navigator === '' || driver === '' || time === 0;
+
   return (
     <S.OnboardingContainer>
       {userName ? (
         <>
-          {' '}
           <S.SettingBox>
             <S.Title>드라이버 / 내비게이터 설정</S.Title>
             <SelectRole navigator={navigator} driver={driver} name={userName} handleSelect={handleSelect} />
@@ -82,12 +82,7 @@ const Onboarding = () => {
             <S.Title>타이머 시간 설정</S.Title>
             <SelectTime handleTime={handleTime} currentTime={time}></SelectTime>
           </S.SettingBox>
-          <S.CompleteButton
-            active={navigator !== '' && driver !== '' && time !== 0}
-            onClick={() => {
-              handleComplete();
-            }}
-          >
+          <S.CompleteButton disabled={isEmpty} $isActive={!isEmpty} onClick={handleComplete}>
             완료
           </S.CompleteButton>
         </>

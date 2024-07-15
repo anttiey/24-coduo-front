@@ -28,7 +28,7 @@ const TimerButton = ({ auto, handleTime, time, currentTime, handleSelect, isSele
     <>
       {auto ? (
         <S.Timer>
-          <S.TimerButtonStyle active={isSelect} onClick={() => handleClick()}>
+          <S.TimerButtonStyle $isActive={isSelect} onClick={() => handleClick()}>
             직접설정
           </S.TimerButtonStyle>
           {isSelect && (
@@ -45,7 +45,7 @@ const TimerButton = ({ auto, handleTime, time, currentTime, handleSelect, isSele
         </S.Timer>
       ) : (
         <S.TimerButtonStyle
-          active={currentTime === time && !isSelect}
+          $isActive={currentTime === time && !isSelect}
           onClick={() => {
             handleClick();
           }}
