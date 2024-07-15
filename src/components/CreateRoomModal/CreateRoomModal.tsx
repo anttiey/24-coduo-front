@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Modal from '../Modal/Modal';
-import * as S from './CreateRoomModal.style';
+import { addPairRoom } from '../../apis/room';
+import * as S from './CreateRoomModal.styles';
 
 interface CreateRoomModalProps {
   isModalOpen: boolean;
@@ -26,12 +27,17 @@ const CreateRoomModal = ({ isModalOpen, closeModal }: CreateRoomModalProps) => {
     }));
   };
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    console.log(pair.first, pair.second);
-
-    navigate(`/room/${roomId}/onboarding`);
+    try {
+      await addPairRoom(pair.first, pair.second);
+      navigate(`/room/${roomId}/onboarding`);
+    } catch (error) {
+      if (error instanceof Error) {
+        alert(error.message);
+      }
+    }
   };
 
   return (
