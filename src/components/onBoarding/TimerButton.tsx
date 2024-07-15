@@ -56,19 +56,20 @@ const TimerButton = ({ auto, handleTime, time, currentTime, handleSelect, isSele
 };
 
 const CustomTimeInput = styled.input`
-  width: 13rem;
+  width: 35rem;
+  height: 5rem;
   border: 1px solid #0094a0;
   padding: 0 1rem;
 `;
 
 const Timer = styled.div`
   display: flex;
-  gap: 1rem;
+  gap: 3rem;
 `;
 
 const TimerButtonStyle = styled.button<{ active: boolean }>`
-  width: 4.5rem;
-  height: 2rem;
+  width: 7.5rem;
+  height: 4rem;
 
   display: flex;
   justify-content: center;
@@ -78,7 +79,7 @@ const TimerButtonStyle = styled.button<{ active: boolean }>`
   color: ${(props) => (props.active ? 'white' : '#0094a0')};
 
   border: 1px solid #0094a0;
-  border-radius: 10px;
+  border-radius: 20px;
   &:hover {
     background-color: #0094a0;
     color: white;

@@ -75,33 +75,33 @@ const Onboarding = () => {
 };
 
 const OnboardingContainer = styled.div`
-  width: 40rem;
-  height: 41.9375rem;
+  width: 70rem;
+  height: 60rem;
+
   display: flex;
+  font-size: 2rem;
 
   flex-direction: column;
   background-color: white;
 
   align-items: center;
+  justify-content: center;
   border-radius: 1rem;
-  padding: 3rem 2.5rem;
+  padding: 0rem 4rem;
 
-  gap: 5rem;
+  gap: 6rem;
 `;
 
 const SettingBox = styled.div`
-  width: 100%;
+  width: 90%;
   display: flex;
   flex-direction: column;
   gap: 1rem;
 `;
 
 const CompleteButton = styled.button`
-  position: relative;
-  bottom: -6rem;
-
-  width: 25rem;
-  height: 3rem;
+  width: 30rem;
+  height: 5rem;
 
   background-color: #b9b9b9;
   color: white;
@@ -110,7 +110,7 @@ const CompleteButton = styled.button`
   justify-content: center;
   align-items: center;
 
-  border-radius: 5rem;
+  border-radius: 6rem;
 
   &:hover {
     background-color: #24d4c3;
@@ -118,7 +118,7 @@ const CompleteButton = styled.button`
 `;
 
 const Title = styled.p`
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   color: #00506b;
 `;
 
