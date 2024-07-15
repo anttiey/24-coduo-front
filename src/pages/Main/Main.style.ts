@@ -6,7 +6,7 @@ export const Layout = styled.div`
   gap: 10rem;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: calc(100vh - 8rem);
   padding: 0 17.8vw;
 `;
 
@@ -28,6 +28,14 @@ export const Title = styled.h1`
 
 export const SubTitle = styled.p`
   font-size: ${({ theme }) => theme.fontSize.lg};
+`;
+
+export const Info = styled.p`
+  padding-top: 2rem;
+  color: #00758b;
+  font-size: 2rem;
+  text-align: center;
+  line-height: 3.2rem;
 `;
 
 export const Button = styled.button`

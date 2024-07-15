@@ -36,6 +36,7 @@ export const Input = styled.input`
 export const ButtonWrapper = styled.div`
   display: flex;
   justify-content: center;
+  padding-top: 2rem;
 `;
 
 export const SubmitButton = styled.input<{ $isActive: boolean }>`
