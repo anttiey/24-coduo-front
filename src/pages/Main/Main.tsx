@@ -3,7 +3,7 @@ import { useState } from 'react';
 import Header from '../../components/Header/Header';
 import CreateRoomModal from '../../components/CreateRoomModal/CreateRoomModal';
 
-import * as S from './Main.style';
+import * as S from './Main.styles';
 
 const Main = () => {
   const [isCreateRoomModalOpen, setIsCreateRoomModalOpen] = useState(false);

@@ -48,6 +48,7 @@ export const Timer = styled.div<{ progress: number; isTimeUp?: boolean }>`
 `;
 
 export const TimerText = styled.p<{ isTimeUp?: boolean }>`
+  display: flex;
   font-size: 4rem;
   font-weight: bold;
   color: #000;
@@ -56,6 +57,11 @@ export const TimerText = styled.p<{ isTimeUp?: boolean }>`
     css`
       color: #ff6951;
     `}
+`;
+
+export const TimerTextDetail = styled.p`
+  width: 7rem;
+  text-align: center;
 `;
 
 export const ButtonWrapper = styled.div`

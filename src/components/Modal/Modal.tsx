@@ -5,7 +5,7 @@ import usePreventScroll from '../../hooks/usePreventScroll';
 
 import type { ModalProps } from './Modal.type';
 
-import * as S from './Modal.style';
+import * as S from './Modal.styles';
 
 const Modal = ({
   isOpen,

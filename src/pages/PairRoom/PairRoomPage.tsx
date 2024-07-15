@@ -81,8 +81,9 @@ const PairRoomPage = () => {
       <S.TimerContainer>
         <S.Timer progress={progress} isTimeUp={isTimeUp}>
           <S.TimerText isTimeUp={isTimeUp}>
-            {Math.floor(time / 60000)}:{('0' + (Math.floor(time / 1000) % 60)).slice(-2)}
-            {time < 60000 && <>.{('00' + (time % 1000)).slice(-3)}</>}
+            <S.TimerTextDetail>{'0' + Math.floor(time / 60000)}</S.TimerTextDetail>:
+            <S.TimerTextDetail>{('0' + (Math.floor(time / 1000) % 60)).slice(-2)}</S.TimerTextDetail>:
+            <S.TimerTextDetail>{time < 60000 && <>{('00' + (time % 1000)).slice(-2)}</>}</S.TimerTextDetail>
           </S.TimerText>
         </S.Timer>
       </S.TimerContainer>
