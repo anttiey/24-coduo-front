@@ -85,8 +85,8 @@ const PairRoomPage = () => {
           </S.RoleText>
         </S.RoleTextContainer>
         <S.TimerContainer>
-          <S.Timer progress={progress} isTimeUp={isTimeUp}>
-            <S.TimerText isTimeUp={isTimeUp}>
+          <S.Timer $progress={progress}>
+            <S.TimerText $isTimeUp={isTimeUp}>
               <S.TimerTextDetail>{('0' + Math.floor(time / 60000)).slice(-2)}</S.TimerTextDetail>:
               <S.TimerTextDetail>{('0' + (Math.floor(time / 1000) % 60)).slice(-2)}</S.TimerTextDetail>
               {time < 60000 && (
@@ -105,7 +105,7 @@ const PairRoomPage = () => {
           <S.Button onClick={handlePause} disabled={!isRunning || isTimeUp}>
             <VscDebugPause />
           </S.Button>
-          <S.Button onClick={handleChangeRole} isTimeUp={isTimeUp}>
+          <S.Button onClick={handleChangeRole} $isTimeUp={isTimeUp}>
             <CgArrowsExchange />
           </S.Button>
         </S.ButtonWrapper>

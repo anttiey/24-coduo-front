@@ -14,7 +14,7 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh - 8rem;
+  height: calc(100vh - 8rem);
   padding: 4rem;
 `;
 
@@ -27,14 +27,17 @@ export const TimerContainer = styled.div`
   margin-top: 3rem;
 `;
 
-export const Timer = styled.div<{ progress: number; isTimeUp?: boolean }>`
+export const Timer = styled.div.attrs<{ $progress: number }>((props) => ({
+  style: {
+    background: `conic-gradient(#00e0c8 ${props.$progress}%, #ddd ${props.$progress}%)`,
+  },
+}))<{ $progress: number }>`
   display: flex;
   align-items: center;
   justify-content: center;
   width: 48rem;
   height: 48rem;
   border-radius: 50%;
-  background: conic-gradient(#00e0c8 ${({ progress }) => progress}%, #ddd ${({ progress }) => progress}%);
   position: relative;
   z-index: 1;
 
@@ -49,7 +52,7 @@ export const Timer = styled.div<{ progress: number; isTimeUp?: boolean }>`
   }
 `;
 
-export const TimerText = styled.p<{ isTimeUp?: boolean }>`
+export const TimerText = styled.div<{ $isTimeUp?: boolean }>`
   display: flex;
   font-size: 6rem;
   font-weight: bold;
@@ -59,8 +62,8 @@ export const TimerText = styled.p<{ isTimeUp?: boolean }>`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  ${({ isTimeUp }) =>
-    isTimeUp &&
+  ${({ $isTimeUp }) =>
+    $isTimeUp &&
     css`
       color: #ff6951;
     `}
@@ -78,7 +81,7 @@ export const ButtonWrapper = styled.div`
   justify-content: center;
 `;
 
-export const Button = styled.button<{ isTimeUp?: boolean }>`
+export const Button = styled.button<{ $isTimeUp?: boolean }>`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -105,8 +108,8 @@ export const Button = styled.button<{ isTimeUp?: boolean }>`
     cursor: not-allowed;
   }
 
-  ${({ isTimeUp }) =>
-    isTimeUp &&
+  ${({ $isTimeUp }) =>
+    $isTimeUp &&
     css`
       animation: ${blink} 1s infinite;
     `}

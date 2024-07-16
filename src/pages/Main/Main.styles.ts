@@ -30,6 +30,11 @@ export const SubTitle = styled.p`
   font-size: ${({ theme }) => theme.fontSize.lg};
 `;
 
+export const MainImage = styled.img`
+  width: 50%;
+  padding: 3.6rem 0;
+`;
+
 export const Info = styled.p`
   padding-top: 2rem;
   color: #00758b;
@@ -38,11 +43,27 @@ export const Info = styled.p`
   line-height: 3.2rem;
 `;
 
-export const Button = styled.button`
+export const ButtonContainer = styled.div`
+  display: flex;
+  gap: 3rem;
+`;
+
+export const CreateButton = styled.button`
   padding: 1.8rem 8rem;
   background: ${({ theme }) => theme.color.primary.main};
   border-radius: 10rem;
   color: white;
   text-align: center;
   font-size: ${({ theme }) => theme.fontSize.md};
+  cursor: pointer;
+`;
+
+export const EnterButton = styled.button`
+  padding: 1.8rem 8rem;
+  border: 1px solid ${({ theme }) => theme.color.primary.main};
+  border-radius: 10rem;
+  color: ${({ theme }) => theme.color.primary.main};
+  text-align: center;
+  font-size: ${({ theme }) => theme.fontSize.md};
+  cursor: pointer;
 `;
