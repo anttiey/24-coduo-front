@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import SelectRole from '../SelectRole/SelectRole';
 import SelectTime from '../SelectTime/SelectTime';
 import { getUserName } from '../../apis/user';
@@ -9,7 +9,7 @@ type Role = 'driver' | 'navigator';
 
 const Onboarding = () => {
   const navigate = useNavigate();
-  // const { roomId } = useParams() as { roomId: string };
+  const { accessCode } = useParams() as { accessCode: string };
 
   const [userName, setUserInfo] = useState<{ id: number; nameA: string; nameB: string } | null>(null);
   const [navigator, setNavigator] = useState<string>('');
@@ -19,7 +19,7 @@ const Onboarding = () => {
   useEffect(() => {
     const fetchUserInfo = async () => {
       try {
-        const data = await getUserName();
+        const data = await getUserName(accessCode);
         setUserInfo(data);
       } catch (error) {
         if (error instanceof Error) {
