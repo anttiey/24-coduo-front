@@ -17,7 +17,9 @@ const SelectRole = ({ driver, navigator, name, handleSelect }: SelectRoleProp) =
           내비게이터
         </S.SelectLabel>
         <S.Select value={navigator} id="navigator" onChange={(event) => handleSelect('navigator', event)}>
-          <option defaultValue="">이름을 선택해주세요</option>
+          <option defaultValue="" hidden>
+            이름을 선택해주세요
+          </option>
           <option value={name.nameA}>{name.nameA}</option>
           <option value={name.nameB}>{name.nameB}</option>
         </S.Select>
@@ -27,7 +29,9 @@ const SelectRole = ({ driver, navigator, name, handleSelect }: SelectRoleProp) =
           드라이버
         </S.SelectLabel>
         <S.Select id="driver" value={driver} onChange={(event) => handleSelect('driver', event)}>
-          <option defaultValue="">이름을 선택해주세요</option>
+          <option defaultValue="" hidden>
+            이름을 선택해주세요
+          </option>
           <option value={name.nameA}>{name.nameA}</option>
           <option value={name.nameB}>{name.nameB}</option>
         </S.Select>

@@ -32,13 +32,15 @@ const Onboarding = () => {
 
   const handleSelect = (role: Role, event: React.ChangeEvent<HTMLSelectElement>) => {
     const selectName = event.target.value;
-    if (!userName) return;
+
+    if (!selectName || !userName) return;
+
     if (role === 'driver') {
       setDriver(selectName);
-      setNavigator(selectName === userName?.nameA ? userName.nameB : userName.nameB);
+      setNavigator(selectName === userName?.nameA ? userName.nameB : userName.nameA);
     } else {
       setNavigator(selectName);
-      setDriver(selectName === userName?.nameA ? userName.nameB : userName.nameB);
+      setDriver(selectName === userName?.nameA ? userName.nameB : userName.nameA);
     }
   };
 
