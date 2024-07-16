@@ -54,12 +54,12 @@ const Onboarding = () => {
       return;
     }
 
-    if (time === 0) {
+    if (time === 0 || isNaN(time)) {
       alert('시간을 정해주세요');
       return;
     }
 
-    navigate(`/room/1`, {
+    navigate(`/room/${accessCode}`, {
       state: {
         user: [
           { name: navigator, role: 'navigator' },

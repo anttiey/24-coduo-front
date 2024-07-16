@@ -31,7 +31,7 @@ export const CompleteButton = styled.button<{ $isActive: boolean }>`
   align-items: center;
   border-radius: 6rem;
   &:hover {
-    background-color: #24d4c3;
+    background-color: ${(props) => (props.$isActive ? 'rgba(0, 185, 165, 1)' : '#B9B9B9')};
   }
 `;
 
