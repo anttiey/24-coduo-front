@@ -7,7 +7,7 @@ export interface UserInfo {
 }
 
 export const getUserName = async (accessCode: string): Promise<UserInfo> => {
-  const response = await fetch(`${API_URL}/pair-room/?accessCode=${accessCode}`, {
+  const response = await fetch(`${API_URL}/pair-room?accessCode=${accessCode}`, {
     method: 'GET',
   });
 
