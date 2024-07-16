@@ -15,11 +15,11 @@ const App = () => {
       element: <Main />,
     },
     {
-      path: '/room/:roomId/onboarding',
+      path: '/room/:accessCode/onboarding',
       element: <OnBoardingPage />,
     },
     {
-      path: '/room/:roomId',
+      path: '/room/:accessCode',
       element: <PairRoomPage />,
     },
   ]);
