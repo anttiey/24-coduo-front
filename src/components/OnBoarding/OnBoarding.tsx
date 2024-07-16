@@ -70,7 +70,7 @@ const Onboarding = () => {
     });
   };
 
-  const isEmpty = navigator === '' || driver === '' || time === 0;
+  const isEmpty = navigator === '' || driver === '' || time === 0 || isNaN(time);
 
   return (
     <S.OnboardingContainer>
